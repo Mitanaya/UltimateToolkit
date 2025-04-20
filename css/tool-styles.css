@@ -1,0 +1,31 @@
+/* Toolset Page Specific Styles */
+.toolset-header {
+    padding: 60px 0 40px;
+    background: linear-gradient(rgba(67, 97, 238, 0.1), rgba(67, 97, 238, 0.05));
+}
+
+.toolset-header h1 {
+    font-size: 42px;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.toolset-header p {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+}
+
+.toolset-content {
+    padding: 40px 0 80px;
+}
+
+.toolset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tool-card-large {
+    background:
