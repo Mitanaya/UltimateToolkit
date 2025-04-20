@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Tools | ToolHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <span>ToolHub</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="developer.html">Developer Tools</a></li>
+                    <li><a href="design.html">Design Tools</a></li>
+                    <li><a href="business.html" class="active">Business Tools</a></li>
+                    <li><a href="education.html">Education Tools</a></li>
+                    <li><a href="health.html">Health Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="toolset-header">
+        <div class="container">
+            <h1>Business Tools</h1>
+            <p>Essential tools for business calculations, financial planning, and document management. All tools are free to use with no registration required.</p>
+        </div>
+    </section>
+    
+    <section class="toolset-content">
+        <div class="container">
+            <div class="toolset-grid">
+                <!-- Mortgage Calculator -->
+                <div class="tool-card-large" id="mortgage-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Mortgage Calculator</h3>
+                    <p>Calculate your monthly mortgage payments based on loan amount, interest rate, and term.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="loanAmount">Loan Amount ($)</label>
+                                <input type="number" id="loanAmount" min="1000" step="1000" value="250000">
+                            </div>
+                            <div class="input-group">
+                                <label for="downPayment">Down Payment ($)</label>
+                                <input type="number" id="downPayment" min="0" step="1000" value="50000">
+                            </div>
+                            <div class="input-group">
+                                <label for="interestRate">Interest Rate (%)</label>
+                                <input type="number" id="interestRate" min="0.1" max="20" step="0.01" value="3.5">
+                            </div>
+                            <div class="input-group">
+                                <label for="loanTerm">Loan Term (years)</label>
+                                <input type="number" id="loanTerm" min="1" max="40" value="30">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateMortgageBtn">Calculate</button>
+                            <button id="resetMortgageBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Monthly Payment:</span>
+                                <span id="monthlyPayment">$1,123.00</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Total Interest:</span>
+                                <span id="totalInterest">$154,280.00</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Total Payment:</span>
+                                <span id="totalPayment">$404,280.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Loan Calculator -->
+                <div class="tool-card-large" id="loan-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Loan Calculator</h3>
+                    <p>Calculate loan payments, interest, and amortization schedule.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="loanPrincipal">Loan Amount ($)</label>
+                                <input type="number" id="loanPrincipal" min="100" step="100" value="10000">
+                            </div>
+                            <div class="input-group">
+                                <label for="loanInterest">Interest Rate (%)</label>
+                                <input type="number" id="loanInterest" min="0.1" max="50" step="0.1" value="7.5">
+                            </div>
+                            <div class="input-group">
+                                <label for="loanPeriod">Loan Period (months)</label>
+                                <input type="number" id="loanPeriod" min="1" max="360" value="60">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateLoanBtn">Calculate</button>
+                            <button id="resetLoanBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Monthly Payment:</span>
+                                <span id="loanPayment">$200.38</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Total Interest:</span>
+                                <span id="loanTotalInterest">$2,022.72</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Total Cost:</span>
+                                <span id="loanTotalCost">$12,022.72</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ROI Calculator -->
+                <div class="tool-card-large" id="roi-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ROI Calculator</h3>
+                    <p>Calculate return on investment for your business projects.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="initialInvestment">Initial Investment ($)</label>
+                                <input type="number" id="initialInvestment" min="0" step="100" value="10000">
+                            </div>
+                            <div class="input-group">
+                                <label for="finalValue">Final Value ($)</label>
+                                <input type="number" id="finalValue" min="0" step="100" value="15000">
+                            </div>
+                            <div class="input-group">
+                                <label for="investmentPeriod">Investment Period (years)</label>
+                                <input type="number" id="investmentPeriod" min="0.1" step="0.1" value="1">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateRoiBtn">Calculate</button>
+                            <button id="resetRoiBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>ROI:</span>
+                                <span id="roiValue">50%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Annualized ROI:</span>
+                                <span id="annualizedRoi">50%</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Net Profit:</span>
+                                <span id="netProfit">$5,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PDF Converter -->
+                <div class="tool-card-large" id="pdf-converter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>PDF Converter</h3>
+                    <p>Convert PDFs to Word, Excel, JPG and other formats.</p>
+                    <div class="tool-container">
+                        <div class="converter-upload">
+                            <input type="file" id="pdfUpload" accept=".pdf">
+                            <label for="pdfUpload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Upload PDF File</span>
+                            </label>
+                        </div>
+                        <div class="converter-options">
+                            <label>Convert to:</label>
+                            <select id="convertFormat">
+                                <option value="docx">Word (DOCX)</option>
+                                <option value="xlsx">Excel (XLSX)</option>
+                                <option value="jpg">JPG Image</option>
+                                <option value="png">PNG Image</option>
+                                <option value="txt">Text (TXT)</option>
+                            </select>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="convertPdfBtn" disabled>Convert</button>
+                            <button id="resetPdfBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Invoice Generator -->
+                <div class="tool-card-large" id="invoice-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Invoice Generator</h3>
+                    <p>Create professional invoices in minutes.</p>
+                    <div class="tool-container">
+                        <div class="invoice-form">
+                            <div class="form-section">
+                                <h4>Your Business Info</h4>
+                                <div class="form-group">
+                                    <label>Business Name</label>
+                                    <input type="text" id="businessName" placeholder="Your Company Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea id="businessAddress" rows="2" placeholder="Your Business Address"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4>Client Info</h4>
+                                <div class="form-group">
+                                    <label>Client Name</label>
+                                    <input type="text" id="clientName" placeholder="Client's Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Client Email</label>
+                                    <input type="email" id="clientEmail" placeholder="client@example.com">
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4>Invoice Details</h4>
+                                <div class="form-group">
+                                    <label>Invoice #</label>
+                                    <input type="text" id="invoiceNumber" placeholder="INV-001">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="date" id="invoiceDate">
+                                </div>
+                                <div class="form-group">
+                                    <label>Due Date</label>
+                                    <input type="date" id="dueDate">
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4>Items</h4>
+                                <div class="invoice-items">
+                                    <div class="item-header">
+                                        <span>Description</span>
+                                        <span>Quantity</span>
+                                        <span>Price</span>
+                                        <span>Total</span>
+                                    </div>
+                                    <div class="item-row" id="itemTemplate">
+                                        <input type="text" class="item-desc" placeholder="Item description">
+                                        <input type="number" class="item-qty" min="1" value="1">
+                                        <input type="number" class="item-price" min="0" step="0.01" placeholder="0.00">
+                                        <span class="item-total">0.00</span>
+                                        <button class="remove-item-btn"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div id="invoiceItemsContainer"></div>
+                                    <button id="addItemBtn">Add Item</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="generateInvoiceBtn">Generate Invoice</button>
+                            <button id="downloadInvoiceBtn" disabled>Download PDF</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Card Designer -->
+                <div class="tool-card-large" id="business-card-designer">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-address-card"></i>
+                    </div>
+                    <h3>Business Card Designer</h3>
+                    <p>Design professional business cards online.</p>
+                    <div class="tool-container">
+                        <div class="card-designer-container">
+                            <div class="card-controls">
+                                <div class="form-group">
+                                    <label>Template</label>
+                                    <select id="cardTemplate">
+                                        <option value="template1">Modern</option>
+                                        <option value="template2">Classic</option>
+                                        <option value="template3">Creative</option>
+                                        <option value="template4">Minimal</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Background Color</label>
+                                    <input type="color" id="cardBgColor" value="#ffffff">
+                                </div>
+                                <div class="form-group">
+                                    <label>Text Color</label>
+                                    <input type="color" id="cardTextColor" value="#000000">
+                                </div>
+                                <div class="form-group">
+                                    <label>Logo</label>
+                                    <input type="file" id="cardLogo" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="card-preview" id="cardPreview">
+                                <div class="card-front">
+                                    <div class="card-logo" id="cardLogoPreview"></div>
+                                    <div class="card-name" contenteditable="true">Your Name</div>
+                                    <div class="card-title" contenteditable="true">Your Position</div>
+                                    <div class="card-company" contenteditable="true">Company Name</div>
+                                    <div class="card-contact">
+                                        <div contenteditable="true">phone@example.com</div>
+                                        <div contenteditable="true">(123) 456-7890</div>
+                                        <div contenteditable="true">www.yourwebsite.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="downloadCardBtn">Download Design</button>
+                            <button id="resetCardBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Currency Converter -->
+                <div class="tool-card-large" id="currency-converter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Currency Converter</h3>
+                    <p>Convert between world currencies with up-to-date exchange rates.</p>
+                    <div class="tool-container">
+                        <div class="converter-inputs">
+                            <div class="input-group">
+                                <input type="number" id="convertAmount" min="0" step="0.01" value="1">
+                                <select id="convertFrom">
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                </select>
+                            </div>
+                            <div class="swap-currencies">
+                                <button id="swapCurrenciesBtn"><i class="fas fa-exchange-alt"></i></button>
+                            </div>
+                            <div class="input-group">
+                                <input type="number" id="convertedAmount" readonly>
+                                <select id="convertTo">
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="converter-rate">
+                            <span id="exchangeRate">1 USD = 0.85 EUR</span>
+                            <span id="rateDate">Last updated: 2023-06-15</span>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="convertCurrencyBtn">Convert</button>
+                            <button id="resetCurrencyBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VAT Calculator -->
+                <div class="tool-card-large" id="vat-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>VAT Calculator</h3>
+                    <p>Calculate VAT (Value Added Tax) amounts and gross/net prices.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="vatRate">VAT Rate (%)</label>
+                                <input type="number" id="vatRate" min="0" max="100" step="0.1" value="20">
+                            </div>
+                            <div class="input-group">
+                                <label for="vatAmount">Amount</label>
+                                <input type="number" id="vatAmount" min="0" step="0.01" placeholder="Enter amount">
+                            </div>
+                            <div class="vat-mode">
+                                <input type="radio" id="vatModeNet" name="vatMode" value="net" checked>
+                                <label for="vatModeNet">Add VAT (Net → Gross)</label>
+                                <input type="radio" id="vatModeGross" name="vatMode" value="gross">
+                                <label for="vatModeGross">Remove VAT (Gross → Net)</label>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateVatBtn">Calculate</button>
+                            <button id="resetVatBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Net Amount:</span>
+                                <span id="netAmount">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>VAT Amount:</span>
+                                <span id="vatAmountResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Gross Amount:</span>
+                                <span id="grossAmount">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ToolHub</h3>
+                    <p>Your one-stop destination for all online tools to boost productivity and simplify tasks.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="developer.html">Developer Tools</a></li>
+                        <li><a href="design.html">Design Tools</a></li>
+                        <li><a href="business.html">Business Tools</a></li>
+                        <li><a href="education.html">Education Tools</a></li>
+                        <li><a href="health.html">Health Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest tools and updates delivered to your inbox.</p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> ToolHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/business-tools.js"></script>
+</body>
+</html>
