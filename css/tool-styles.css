@@ -28,4 +28,164 @@
 }
 
 .tool-card-large {
-    background:
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    grid-column: span 1;
+}
+
+.tool-card-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon-large {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 28px;
+}
+
+.tool-card-large h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.tool-card-large p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.tool-container {
+    margin-top: 20px;
+}
+
+.tool-container textarea,
+.tool-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-family: monospace;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.tool-container input[type="text"] {
+    min-height: auto;
+    height: 40px;
+}
+
+.tool-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tool-actions button {
+    padding: 8px 16px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tool-actions button:hover {
+    background-color: var(--secondary);
+}
+
+.converter-tabs {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.password-options,
+.qr-options {
+    margin-bottom: 15px;
+}
+
+.option {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.option label {
+    margin-right: 10px;
+    min-width: 100px;
+}
+
+.option input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.option input[type="range"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+#qrCodeContainer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.validation-result {
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    min-height: 100px;
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    overflow-x: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .toolset-header h1 {
+        font-size: 32px;
+    }
+    
+    .toolset-header p {
+        font-size: 16px;
+    }
+    
+    .tool-card-large {
+        grid-column: span 1;
+    }
+}
