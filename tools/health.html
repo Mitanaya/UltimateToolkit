@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tools | ToolHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <span>ToolHub</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="developer.html">Developer Tools</a></li>
+                    <li><a href="design.html">Design Tools</a></li>
+                    <li><a href="business.html">Business Tools</a></li>
+                    <li><a href="education.html">Education Tools</a></li>
+                    <li><a href="health.html" class="active">Health Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="toolset-header">
+        <div class="container">
+            <h1>Health Tools</h1>
+            <p>Health and fitness calculators to help you track and improve your wellbeing. All tools are free to use with no registration required.</p>
+        </div>
+    </section>
+    
+    <section class="toolset-content">
+        <div class="container">
+            <div class="toolset-grid">
+                <!-- BMI Calculator -->
+                <div class="tool-card-large" id="bmi-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>BMI Calculator</h3>
+                    <p>Calculate your Body Mass Index and learn what it means for your health.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Measurement System:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="metricSystem" name="measurement" value="metric" checked>
+                                    <label for="metricSystem">Metric</label>
+                                    <input type="radio" id="imperialSystem" name="measurement" value="imperial">
+                                    <label for="imperialSystem">Imperial</label>
+                                </div>
+                            </div>
+                            <div class="input-group metric-inputs">
+                                <label for="heightCm">Height (cm)</label>
+                                <input type="number" id="heightCm" min="100" max="250" value="170">
+                            </div>
+                            <div class="input-group metric-inputs">
+                                <label for="weightKg">Weight (kg)</label>
+                                <input type="number" id="weightKg" min="30" max="300" step="0.1" value="70">
+                            </div>
+                            <div class="input-group imperial-inputs" style="display: none;">
+                                <label for="heightFt">Height (ft)</label>
+                                <input type="number" id="heightFt" min="3" max="8" value="5">
+                                <label for="heightIn">Height (in)</label>
+                                <input type="number" id="heightIn" min="0" max="11" value="7">
+                            </div>
+                            <div class="input-group imperial-inputs" style="display: none;">
+                                <label for="weightLbs">Weight (lbs)</label>
+                                <input type="number" id="weightLbs" min="66" max="660" value="154">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateBmiBtn">Calculate BMI</button>
+                            <button id="resetBmiBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Your BMI:</span>
+                                <span id="bmiResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Category:</span>
+                                <span id="bmiCategory">-</span>
+                            </div>
+                        </div>
+                        <div class="bmi-chart">
+                            <h4>BMI Categories:</h4>
+                            <ul>
+                                <li>Underweight: BMI less than 18.5</li>
+                                <li>Normal weight: BMI 18.5-24.9</li>
+                                <li>Overweight: BMI 25-29.9</li>
+                                <li>Obesity: BMI 30 or greater</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Calorie Calculator -->
+                <div class="tool-card-large" id="calorie-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Calorie Calculator</h3>
+                    <p>Calculate your daily calorie needs based on your activity level and goals.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Gender:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="maleGender" name="gender" value="male" checked>
+                                    <label for="maleGender">Male</label>
+                                    <input type="radio" id="femaleGender" name="gender" value="female">
+                                    <label for="femaleGender">Female</label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="calorieAge">Age (years)</label>
+                                <input type="number" id="calorieAge" min="15" max="120" value="30">
+                            </div>
+                            <div class="input-group">
+                                <label for="calorieHeight">Height (cm)</label>
+                                <input type="number" id="calorieHeight" min="100" max="250" value="170">
+                            </div>
+                            <div class="input-group">
+                                <label for="calorieWeight">Weight (kg)</label>
+                                <input type="number" id="calorieWeight" min="30" max="300" step="0.1" value="70">
+                            </div>
+                            <div class="input-group">
+                                <label for="activityLevel">Activity Level:</label>
+                                <select id="activityLevel">
+                                    <option value="1.2">Sedentary (little or no exercise)</option>
+                                    <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                                    <option value="1.55" selected>Moderately active (moderate exercise 3-5 days/week)</option>
+                                    <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                                    <option value="1.9">Extra active (very hard exercise & physical job)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Goal:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="maintainGoal" name="goal" value="maintain" checked>
+                                    <label for="maintainGoal">Maintain weight</label>
+                                    <input type="radio" id="loseGoal" name="goal" value="lose">
+                                    <label for="loseGoal">Lose weight</label>
+                                    <input type="radio" id="gainGoal" name="goal" value="gain">
+                                    <label for="gainGoal">Gain weight</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateCaloriesBtn">Calculate</button>
+                            <button id="resetCaloriesBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>BMR:</span>
+                                <span id="bmrResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Daily Calories:</span>
+                                <span id="calorieResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Macros (P/F/C):</span>
+                                <span id="macroResult">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Body Fat Calculator -->
+                <div class="tool-card-large" id="bodyfat-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Body Fat Calculator</h3>
+                    <p>Estimate your body fat percentage using different methods.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Method:</label>
+                                <select id="bodyfatMethod">
+                                    <option value="navy">US Navy Method</option>
+                                    <option value="bmi">BMI Method</option>
+                                    <option value="skinfold">Skinfold Method</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Gender:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="bodyfatMale" name="bodyfatGender" value="male" checked>
+                                    <label for="bodyfatMale">Male</label>
+                                    <input type="radio" id="bodyfatFemale" name="bodyfatGender" value="female">
+                                    <label for="bodyfatFemale">Female</label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="bodyfatHeight">Height (cm)</label>
+                                <input type="number" id="bodyfatHeight" min="100" max="250" value="170">
+                            </div>
+                            <div class="input-group">
+                                <label for="bodyfatWeight">Weight (kg)</label>
+                                <input type="number" id="bodyfatWeight" min="30" max="300" step="0.1" value="70">
+                            </div>
+                            <div class="input-group navy-inputs">
+                                <label for="neckCm">Neck (cm)</label>
+                                <input type="number" id="neckCm" min="20" max="60" step="0.1" value="38">
+                            </div>
+                            <div class="input-group navy-inputs">
+                                <label for="waistCm">Waist (cm)</label>
+                                <input type="number" id="waistCm" min="50" max="200" step="0.1" value="80">
+                            </div>
+                            <div class="input-group navy-inputs female-inputs" style="display: none;">
+                                <label for="hipCm">Hip (cm)</label>
+                                <input type="number" id="hipCm" min="60" max="200" step="0.1" value="95">
+                            </div>
+                            <div class="input-group skinfold-inputs" style="display: none;">
+                                <label for="skinfoldChest">Chest (mm)</label>
+                                <input type="number" id="skinfoldChest" min="1" max="50" value="10">
+                            </div>
+                            <div class="input-group skinfold-inputs" style="display: none;">
+                                <label for="skinfoldAbdominal">Abdominal (mm)</label>
+                                <input type="number" id="skinfoldAbdominal" min="1" max="50" value="15">
+                            </div>
+                            <div class="input-group skinfold-inputs" style="display: none;">
+                                <label for="skinfoldThigh">Thigh (mm)</label>
+                                <input type="number" id="skinfoldThigh" min="1" max="50" value="12">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateBodyfatBtn">Calculate</button>
+                            <button id="resetBodyfatBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Body Fat %:</span>
+                                <span id="bodyfatResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Category:</span>
+                                <span id="bodyfatCategory">-</span>
+                            </div>
+                        </div>
+                        <div class="bodyfat-chart">
+                            <h4>Body Fat Categories:</h4>
+                            <ul>
+                                <li>Essential fat: 2-5% (M), 10-13% (F)</li>
+                                <li>Athletes: 6-13% (M), 14-20% (F)</li>
+                                <li>Fitness: 14-17% (M), 21-24% (F)</li>
+                                <li>Average: 18-24% (M), 25-31% (F)</li>
+                                <li>Obese: 25%+ (M), 32%+ (F)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregnancy Calculator -->
+                <div class="tool-card-large" id="pregnancy-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pregnancy Calculator</h3>
+                    <p>Calculate due date, conception date, and pregnancy milestones.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Calculation Method:</label>
+                                <select id="pregnancyMethod">
+                                    <option value="lmp">Last Menstrual Period</option>
+                                    <option value="conception">Conception Date</option>
+                                    <option value="ultrasound">Ultrasound Date</option>
+                                </select>
+                            </div>
+                            <div class="input-group lmp-inputs">
+                                <label for="lmpDate">First Day of Last Period:</label>
+                                <input type="date" id="lmpDate">
+                            </div>
+                            <div class="input-group conception-inputs" style="display: none;">
+                                <label for="conceptionDate">Conception Date:</label>
+                                <input type="date" id="conceptionDate">
+                            </div>
+                            <div class="input-group ultrasound-inputs" style="display: none;">
+                                <label for="ultrasoundDate">Ultrasound Date:</label>
+                                <input type="date" id="ultrasoundDate">
+                            </div>
+                            <div class="input-group ultrasound-inputs" style="display: none;">
+                                <label for="gestationalAge">Gestational Age at Ultrasound:</label>
+                                <input type="number" id="gestationalAge" min="1" max="40" value="12">
+                                <span>weeks</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="cycleLength">Average Cycle Length:</label>
+                                <input type="number" id="cycleLength" min="21" max="45" value="28">
+                                <span>days</span>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculatePregnancyBtn">Calculate</button>
+                            <button id="resetPregnancyBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Due Date:</span>
+                                <span id="dueDateResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Current Week:</span>
+                                <span id="currentWeekResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Trimester:</span>
+                                <span id="trimesterResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Conception Date:</span>
+                                <span id="conceptionResult">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Water Intake Calculator -->
+                <div class="tool-card-large" id="water-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Water Intake Calculator</h3>
+                    <p>Calculate your recommended daily water intake based on your weight and activity level.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Measurement System:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="waterMetric" name="waterSystem" value="metric" checked>
+                                    <label for="waterMetric">Metric</label>
+                                    <input type="radio" id="waterImperial" name="waterSystem" value="imperial">
+                                    <label for="waterImperial">Imperial</label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="waterWeight">Weight</label>
+                                <input type="number" id="waterWeight" min="30" max="300" step="0.1" value="70">
+                                <span id="waterWeightUnit">kg</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="activityMinutes">Daily Activity (minutes)</label>
+                                <input type="number" id="activityMinutes" min="0" max="1000" value="30">
+                            </div>
+                            <div class="input-group">
+                                <label>Climate:</label>
+                                <select id="climateFactor">
+                                    <option value="1">Temperate</option>
+                                    <option value="1.2">Hot</option>
+                                    <option value="1.5">Very Hot/Dry</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateWaterBtn">Calculate</button>
+                            <button id="resetWaterBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Daily Water Intake:</span>
+                                <span id="waterResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>8oz Glasses:</span>
+                                <span id="glassesResult">-</span>
+                            </div>
+                        </div>
+                        <div class="water-tips">
+                            <h4>Hydration Tips:</h4>
+                            <ul>
+                                <li>Start your day with a glass of water</li>
+                                <li>Drink before you feel thirsty</li>
+                                <li>Carry a water bottle with you</li>
+                                <li>Eat water-rich fruits and vegetables</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sleep Calculator -->
+                <div class="tool-card-large" id="sleep-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Sleep Calculator</h3>
+                    <p>Calculate optimal bedtime or wake-up time based on sleep cycles.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Calculate:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="bedtimeCalc" name="sleepCalc" value="bedtime" checked>
+                                    <label for="bedtimeCalc">Bedtime</label>
+                                    <input type="radio" id="wakeupCalc" name="sleepCalc" value="wakeup">
+                                    <label for="wakeupCalc">Wake-up Time</label>
+                                </div>
+                            </div>
+                            <div class="input-group bedtime-inputs">
+                                <label for="wakeupTime">Wake-up Time:</label>
+                                <input type="time" id="wakeupTime" value="07:00">
+                            </div>
+                            <div class="input-group wakeup-inputs" style="display: none;">
+                                <label for="bedtimeTime">Bedtime:</label>
+                                <input type="time" id="bedtimeTime" value="23:00">
+                            </div>
+                            <div class="input-group">
+                                <label for="sleepCycles">Sleep Cycles (90 min each):</label>
+                                <select id="sleepCycles">
+                                    <option value="4">4 cycles (6 hours)</option>
+                                    <option value="5" selected>5 cycles (7.5 hours)</option>
+                                    <option value="6">6 cycles (9 hours)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="fallAsleepTime">Time to Fall Asleep:</label>
+                                <select id="fallAsleepTime">
+                                    <option value="5">5 minutes</option>
+                                    <option value="10">10 minutes</option>
+                                    <option value="15" selected>15 minutes</option>
+                                    <option value="20">20 minutes</option>
+                                    <option value="30">30 minutes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateSleepBtn">Calculate</button>
+                            <button id="resetSleepBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item bedtime-result">
+                                <span>Recommended Bedtime:</span>
+                                <span id="bedtimeResult">-</span>
+                            </div>
+                            <div class="result-item wakeup-result" style="display: none;">
+                                <span>Recommended Wake-up Time:</span>
+                                <span id="wakeupResult">-</span>
+                            </div>
+                        </div>
+                        <div class="sleep-tips">
+                            <h4>Sleep Tips:</h4>
+                            <ul>
+                                <li>Maintain a consistent sleep schedule</li>
+                                <li>Avoid screens 1 hour before bed</li>
+                                <li>Keep your bedroom cool and dark</li>
+                                <li>Limit caffeine in the afternoon/evening</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Heart Rate Calculator -->
+                <div class="tool-card-large" id="heartrate-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Heart Rate Calculator</h3>
+                    <p>Calculate your target heart rate zones for exercise and resting heart rate.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="heartrateAge">Age</label>
+                                <input type="number" id="heartrateAge" min="10" max="120" value="30">
+                            </div>
+                            <div class="input-group">
+                                <label for="restingHeartrate">Resting Heart Rate (bpm)</label>
+                                <input type="number" id="restingHeartrate" min="30" max="120" value="70">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateHeartrateBtn">Calculate</button>
+                            <button id="resetHeartrateBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Maximum Heart Rate:</span>
+                                <span id="maxHeartrate">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Target Heart Rate Zone (50-85%):</span>
+                                <span id="targetHeartrate">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Resting Heart Rate:</span>
+                                <span id="restingResult">-</span>
+                            </div>
+                        </div>
+                        <div class="heartrate-zones">
+                            <h4>Heart Rate Zones:</h4>
+                            <ul>
+                                <li>Light Exercise: 50-60% of max</li>
+                                <li>Weight Management: 60-70% of max</li>
+                                <li>Aerobic: 70-80% of max</li>
+                                <li>Anaerobic: 80-90% of max</li>
+                                <li>Maximum Effort: 90-100% of max</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Macro Calculator -->
+                <div class="tool-card-large" id="macro-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-utensil-spoon"></i>
+                    </div>
+                    <h3>Macro Calculator</h3>
+                    <p>Calculate your ideal macronutrient ratios for your fitness goals.</p>
+                    <div class="tool-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Goal:</label>
+                                <select id="macroGoal">
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="fatloss">Fat Loss</option>
+                                    <option value="musclegain">Muscle Gain</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="macroCalories">Daily Calories:</label>
+                                <input type="number" id="macroCalories" min="1000" max="10000" step="50" value="2000">
+                            </div>
+                            <div class="input-group">
+                                <label>Diet Type:</label>
+                                <select id="dietType">
+                                    <option value="balanced">Balanced</option>
+                                    <option value="lowcarb">Low Carb</option>
+                                    <option value="highcarb">High Carb</option>
+                                    <option value="keto">Keto</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="proteinRatio">Protein Ratio:</label>
+                                <input type="range" id="proteinRatio" min="10" max="50" value="25">
+                                <span id="proteinRatioValue">25%</span>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="calculateMacroBtn">Calculate</button>
+                            <button id="resetMacroBtn">Reset</button>
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <span>Protein:</span>
+                                <span id="proteinResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Fat:</span>
+                                <span id="fatResult">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Carbs:</span>
+                                <span id="carbsResult">-</span>
+                            </div>
+                        </div>
+                        <div class="macro-tips">
+                            <h4>Macronutrient Tips:</h4>
+                            <ul>
+                                <li>Protein: 0.8-1.2g per pound of body weight</li>
+                                <li>Fat: At least 0.3g per pound of body weight</li>
+                                <li>Carbs: Remainder of calories after protein/fat</li>
+                                <li>Adjust based on personal preference and results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ToolHub</h3>
+                    <p>Your one-stop destination for all online tools to boost productivity and simplify tasks.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="developer.html">Developer Tools</a></li>
+                        <li><a href="design.html">Design Tools</a></li>
+                        <li><a href="business.html">Business Tools</a></li>
+                        <li><a href="education.html">Education Tools</a></li>
+                        <li><a href="health.html">Health Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest tools and updates delivered to your inbox.</p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> ToolHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/health-tools.js"></script>
+</body>
+</html>
