@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Tools | ToolHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <span>ToolHub</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="developer.html">Developer Tools</a></li>
+                    <li><a href="design.html">Design Tools</a></li>
+                    <li><a href="business.html">Business Tools</a></li>
+                    <li><a href="education.html" class="active">Education Tools</a></li>
+                    <li><a href="health.html">Health Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="toolset-header">
+        <div class="container">
+            <h1>Education Tools</h1>
+            <p>Helpful tools for students, teachers, and lifelong learners. All tools are free to use with no registration required.</p>
+        </div>
+    </section>
+    
+    <section class="toolset-content">
+        <div class="container">
+            <div class="toolset-grid">
+                <!-- Unit Converter -->
+                <div class="tool-card-large" id="unit-converter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Unit Converter</h3>
+                    <p>Convert between different units of measurement for length, weight, volume, and more.</p>
+                    <div class="tool-container">
+                        <div class="converter-controls">
+                            <div class="input-group">
+                                <input type="number" id="unitValue" min="0" step="0.01" value="1">
+                                <select id="unitFrom">
+                                    <option value="meter">Meter (m)</option>
+                                    <option value="kilometer">Kilometer (km)</option>
+                                    <option value="centimeter">Centimeter (cm)</option>
+                                    <option value="millimeter">Millimeter (mm)</option>
+                                    <option value="inch">Inch (in)</option>
+                                </select>
+                            </div>
+                            <div class="equals-sign">=</div>
+                            <div class="input-group">
+                                <input type="number" id="convertedUnit" readonly>
+                                <select id="unitTo">
+                                    <option value="inch">Inch (in)</option>
+                                    <option value="meter">Meter (m)</option>
+                                    <option value="kilometer">Kilometer (km)</option>
+                                    <option value="centimeter">Centimeter (cm)</option>
+                                    <option value="millimeter">Millimeter (mm)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="converter-categories">
+                            <button class="category-btn active" data-category="length">Length</button>
+                            <button class="category-btn" data-category="weight">Weight</button>
+                            <button class="category-btn" data-category="volume">Volume</button>
+                            <button class="category-btn" data-category="temperature">Temperature</button>
+                            <button class="category-btn" data-category="area">Area</button>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="convertUnitBtn">Convert</button>
+                            <button id="resetUnitBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scientific Calculator -->
+                <div class="tool-card-large" id="scientific-calculator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Scientific Calculator</h3>
+                    <p>Advanced calculator with scientific functions for complex calculations.</p>
+                    <div class="tool-container">
+                        <div class="calculator-display">
+                            <input type="text" id="calcDisplay" readonly>
+                            <div class="calc-history" id="calcHistory"></div>
+                        </div>
+                        <div class="calculator-buttons">
+                            <div class="calc-row">
+                                <button class="calc-btn func" data-value="sin">sin</button>
+                                <button class="calc-btn func" data-value="cos">cos</button>
+                                <button class="calc-btn func" data-value="tan">tan</button>
+                                <button class="calc-btn func" data-value="log">log</button>
+                                <button class="calc-btn func" data-value="ln">ln</button>
+                            </div>
+                            <div class="calc-row">
+                                <button class="calc-btn func" data-value="(">(</button>
+                                <button class="calc-btn func" data-value=")">)</button>
+                                <button class="calc-btn func" data-value="^">^</button>
+                                <button class="calc-btn func" data-value="√">√</button>
+                                <button class="calc-btn func" data-value="π">π</button>
+                            </div>
+                            <div class="calc-row">
+                                <button class="calc-btn num" data-value="7">7</button>
+                                <button class="calc-btn num" data-value="8">8</button>
+                                <button class="calc-btn num" data-value="9">9</button>
+                                <button class="calc-btn op" data-value="/">/</button>
+                                <button class="calc-btn func" data-value="C">C</button>
+                            </div>
+                            <div class="calc-row">
+                                <button class="calc-btn num" data-value="4">4</button>
+                                <button class="calc-btn num" data-value="5">5</button>
+                                <button class="calc-btn num" data-value="6">6</button>
+                                <button class="calc-btn op" data-value="*">×</button>
+                                <button class="calc-btn func" data-value="DEL">DEL</button>
+                            </div>
+                            <div class="calc-row">
+                                <button class="calc-btn num" data-value="1">1</button>
+                                <button class="calc-btn num" data-value="2">2</button>
+                                <button class="calc-btn num" data-value="3">3</button>
+                                <button class="calc-btn op" data-value="-">-</button>
+                                <button class="calc-btn func" data-value="ANS">ANS</button>
+                            </div>
+                            <div class="calc-row">
+                                <button class="calc-btn num" data-value="0">0</button>
+                                <button class="calc-btn num" data-value=".">.</button>
+                                <button class="calc-btn op" data-value="+">+</button>
+                                <button class="calc-btn func" data-value="=">=</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Equation Solver -->
+                <div class="tool-card-large" id="equation-solver">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <h3>Equation Solver</h3>
+                    <p>Solve linear, quadratic, and system of equations step by step.</p>
+                    <div class="tool-container">
+                        <div class="equation-type">
+                            <select id="equationSelector">
+                                <option value="linear">Linear Equation (ax + b = 0)</option>
+                                <option value="quadratic">Quadratic Equation (ax² + bx + c = 0)</option>
+                                <option value="system">System of Equations</option>
+                            </select>
+                        </div>
+                        <div class="equation-input" id="equationInput">
+                            <div class="linear-equation">
+                                <input type="number" id="linearA" placeholder="a" step="any">
+                                <span>x +</span>
+                                <input type="number" id="linearB" placeholder="b" step="any">
+                                <span>= 0</span>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="solveEquationBtn">Solve</button>
+                            <button id="resetEquationBtn">Reset</button>
+                        </div>
+                        <div class="equation-solution" id="equationSolution"></div>
+                    </div>
+                </div>
+                
+                <!-- Citation Generator -->
+                <div class="tool-card-large" id="citation-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Citation Generator</h3>
+                    <p>Generate citations in APA, MLA, Chicago, and Harvard styles.</p>
+                    <div class="tool-container">
+                        <div class="citation-controls">
+                            <div class="citation-style">
+                                <label>Citation Style:</label>
+                                <select id="citationStyle">
+                                    <option value="apa">APA</option>
+                                    <option value="mla">MLA</option>
+                                    <option value="chicago">Chicago</option>
+                                    <option value="harvard">Harvard</option>
+                                </select>
+                            </div>
+                            <div class="citation-type">
+                                <label>Source Type:</label>
+                                <select id="citationType">
+                                    <option value="book">Book</option>
+                                    <option value="journal">Journal Article</option>
+                                    <option value="website">Website</option>
+                                    <option value="newspaper">Newspaper</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="citation-form" id="citationForm">
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" id="citationAuthor" placeholder="Last Name, First Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" id="citationTitle" placeholder="Title of the work">
+                            </div>
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input type="number" id="citationYear" placeholder="Publication year">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="generateCitationBtn">Generate</button>
+                            <button id="resetCitationBtn">Reset</button>
+                        </div>
+                        <div class="citation-result">
+                            <textarea id="citationResult" readonly></textarea>
+                            <button id="copyCitationBtn">Copy Citation</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Word Counter -->
+                <div class="tool-card-large" id="word-counter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3>Word Counter</h3>
+                    <p>Count words, characters, sentences, and paragraphs in your text.</p>
+                    <div class="tool-container">
+                        <textarea id="wordCounterText" placeholder="Type or paste your text here..."></textarea>
+                        <div class="counter-results">
+                            <div class="result-item">
+                                <span>Words:</span>
+                                <span id="wordCount">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Characters:</span>
+                                <span id="charCount">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Sentences:</span>
+                                <span id="sentenceCount">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span>Paragraphs:</span>
+                                <span id="paragraphCount">0</span>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="clearTextBtn">Clear Text</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plagiarism Checker -->
+                <div class="tool-card-large" id="plagiarism-checker">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Plagiarism Checker</h3>
+                    <p>Check your text for potential plagiarism against online sources.</p>
+                    <div class="tool-container">
+                        <textarea id="plagiarismText" placeholder="Paste your text to check for plagiarism..."></textarea>
+                        <div class="plagiarism-options">
+                            <div class="option">
+                                <input type="checkbox" id="deepSearch" checked>
+                                <label for="deepSearch">Deep Search</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="ignoreQuotes">
+                                <label for="ignoreQuotes">Ignore Quotes</label>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="checkPlagiarismBtn">Check Plagiarism</button>
+                            <button id="clearPlagiarismBtn">Clear</button>
+                        </div>
+                        <div class="plagiarism-result" id="plagiarismResult">
+                            <div class="similarity-score">
+                                <span>Originality Score:</span>
+                                <span id="originalityScore">-</span>
+                            </div>
+                            <div class="matches-found" id="matchesFound"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language Translator -->
+                <div class="tool-card-large" id="language-translator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Language Translator</h3>
+                    <p>Translate text between multiple languages with reasonable accuracy.</p>
+                    <div class="tool-container">
+                        <div class="translator-controls">
+                            <select id="translateFrom">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                            </select>
+                            <button id="swapLanguagesBtn"><i class="fas fa-exchange-alt"></i></button>
+                            <select id="translateTo">
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                        <div class="translator-text">
+                            <textarea id="sourceText" placeholder="Enter text to translate"></textarea>
+                            <textarea id="translatedText" placeholder="Translation will appear here" readonly></textarea>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="translateBtn">Translate</button>
+                            <button id="clearTranslateBtn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flashcards Generator -->
+                <div class="tool-card-large" id="flashcards-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Flashcards Generator</h3>
+                    <p>Create and study digital flashcards for effective learning.</p>
+                    <div class="tool-container">
+                        <div class="flashcards-controls">
+                            <div class="form-group">
+                                <label>Flashcard Set Title</label>
+                                <input type="text" id="flashcardsTitle" placeholder="My Study Set">
+                            </div>
+                            <div class="flashcards-input">
+                                <input type="text" id="flashcardTerm" placeholder="Term">
+                                <input type="text" id="flashcardDefinition" placeholder="Definition">
+                                <button id="addFlashcardBtn">Add Card</button>
+                            </div>
+                        </div>
+                        <div class="flashcards-preview">
+                            <div class="flashcards-count">
+                                <span id="flashcardsCount">0</span> cards
+                            </div>
+                            <div class="flashcards-list" id="flashcardsList"></div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="studyFlashcardsBtn">Study Now</button>
+                            <button id="exportFlashcardsBtn">Export Set</button>
+                            <button id="clearFlashcardsBtn">Clear All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ToolHub</h3>
+                    <p>Your one-stop destination for all online tools to boost productivity and simplify tasks.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="developer.html">Developer Tools</a></li>
+                        <li><a href="design.html">Design Tools</a></li>
+                        <li><a href="business.html">Business Tools</a></li>
+                        <li><a href="education.html">Education Tools</a></li>
+                        <li><a href="health.html">Health Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest tools and updates delivered to your inbox.</p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> ToolHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/education-tools.js"></script>
+</body>
+</html>
