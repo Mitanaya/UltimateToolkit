@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tools | ToolHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <span>ToolHub</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="developer.html">Developer Tools</a></li>
+                    <li><a href="design.html" class="active">Design Tools</a></li>
+                    <li><a href="business.html">Business Tools</a></li>
+                    <li><a href="education.html">Education Tools</a></li>
+                    <li><a href="health.html">Health Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="toolset-header">
+        <div class="container">
+            <h1>Design Tools</h1>
+            <p>Powerful tools for designers to create beautiful visuals, color schemes, and design assets. All tools are free to use with no registration required.</p>
+        </div>
+    </section>
+    
+    <section class="toolset-content">
+        <div class="container">
+            <div class="toolset-grid">
+                <!-- Color Picker -->
+                <div class="tool-card-large" id="color-picker">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Color Picker</h3>
+                    <p>Select, convert and generate perfect color palettes for your designs.</p>
+                    <div class="tool-container">
+                        <div class="color-picker-container">
+                            <input type="color" id="colorSelector" value="#4361ee">
+                            <div class="color-values">
+                                <div class="color-value">
+                                    <label>HEX:</label>
+                                    <input type="text" id="hexValue" value="#4361ee">
+                                </div>
+                                <div class="color-value">
+                                    <label>RGB:</label>
+                                    <input type="text" id="rgbValue" value="rgb(67, 97, 238)">
+                                </div>
+                                <div class="color-value">
+                                    <label>HSL:</label>
+                                    <input type="text" id="hslValue" value="hsl(230, 84%, 60%)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="copyHexBtn">Copy HEX</button>
+                            <button id="copyRgbBtn">Copy RGB</button>
+                            <button id="copyHslBtn">Copy HSL</button>
+                        </div>
+                        <div class="color-preview" id="colorPreview" style="background-color: #4361ee;"></div>
+                    </div>
+                </div>
+                
+                <!-- Gradient Generator -->
+                <div class="tool-card-large" id="gradient-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3>Gradient Generator</h3>
+                    <p>Create beautiful CSS gradients with this easy-to-use generator.</p>
+                    <div class="tool-container">
+                        <div class="gradient-controls">
+                            <div class="gradient-colors">
+                                <input type="color" id="gradientColor1" value="#4361ee">
+                                <input type="color" id="gradientColor2" value="#3f37c9">
+                            </div>
+                            <select id="gradientDirection">
+                                <option value="to right">Horizontal</option>
+                                <option value="to bottom">Vertical</option>
+                                <option value="to bottom right">Diagonal</option>
+                                <option value="circle">Radial</option>
+                            </select>
+                        </div>
+                        <div class="gradient-preview" id="gradientPreview"></div>
+                        <textarea id="gradientCss" readonly>background: linear-gradient(to right, #4361ee, #3f37c9);</textarea>
+                        <div class="tool-actions">
+                            <button id="copyGradientBtn">Copy CSS</button>
+                            <button id="randomGradientBtn">Random</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Font Pairing Tool -->
+                <div class="tool-card-large" id="font-pairing">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3>Font Pairing Tool</h3>
+                    <p>Discover perfect font combinations for your projects.</p>
+                    <div class="tool-container">
+                        <div class="font-pairing-container">
+                            <div class="font-pairing-preview">
+                                <h4 class="font-pairing-heading" style="font-family: 'Roboto', sans-serif;">Heading Text</h4>
+                                <p class="font-pairing-body" style="font-family: 'Open Sans', sans-serif;">Body text example showing how these fonts work together in a paragraph.</p>
+                            </div>
+                            <div class="font-controls">
+                                <div class="font-selector">
+                                    <label>Heading Font:</label>
+                                    <select id="headingFont">
+                                        <option value="'Roboto', sans-serif">Roboto</option>
+                                        <option value="'Montserrat', sans-serif">Montserrat</option>
+                                        <option value="'Playfair Display', serif">Playfair Display</option>
+                                        <option value="'Poppins', sans-serif">Poppins</option>
+                                    </select>
+                                </div>
+                                <div class="font-selector">
+                                    <label>Body Font:</label>
+                                    <select id="bodyFont">
+                                        <option value="'Open Sans', sans-serif">Open Sans</option>
+                                        <option value="'Lato', sans-serif">Lato</option>
+                                        <option value="'Merriweather', serif">Merriweather</option>
+                                        <option value="'Roboto', sans-serif">Roboto</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="copyFontsBtn">Copy CSS</button>
+                            <button id="randomFontsBtn">Random Pair</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Compressor -->
+                <div class="tool-card-large" id="image-compressor">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <h3>Image Compressor</h3>
+                    <p>Reduce image file size without losing quality.</p>
+                    <div class="tool-container">
+                        <div class="image-upload-container">
+                            <input type="file" id="imageUpload" accept="image/*">
+                            <label for="imageUpload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose an image</span>
+                            </label>
+                            <div class="compression-options">
+                                <label>Quality:</label>
+                                <input type="range" id="compressionQuality" min="1" max="100" value="80">
+                                <span id="qualityValue">80%</span>
+                            </div>
+                            <div class="image-preview-container">
+                                <div class="image-preview" id="originalPreview"></div>
+                                <div class="image-preview" id="compressedPreview"></div>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="compressBtn" disabled>Compress</button>
+                            <button id="downloadCompressedBtn" disabled>Download</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SVG Optimizer -->
+                <div class="tool-card-large" id="svg-optimizer">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>SVG Optimizer</h3>
+                    <p>Clean and optimize SVG files for better performance.</p>
+                    <div class="tool-container">
+                        <textarea id="svgInput" placeholder="Paste your SVG code here..."></textarea>
+                        <div class="optimization-options">
+                            <div class="option">
+                                <input type="checkbox" id="removeComments" checked>
+                                <label for="removeComments">Remove comments</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="removeMetadata" checked>
+                                <label for="removeMetadata">Remove metadata</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="collapseGroups" checked>
+                                <label for="collapseGroups">Collapse groups</label>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="optimizeSvgBtn">Optimize SVG</button>
+                            <button id="clearSvgBtn">Clear</button>
+                        </div>
+                        <textarea id="svgOutput" placeholder="Optimized SVG will appear here..." readonly></textarea>
+                    </div>
+                </div>
+                
+                <!-- Favicon Generator -->
+                <div class="tool-card-large" id="favicon-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-icons"></i>
+                    </div>
+                    <h3>Favicon Generator</h3>
+                    <p>Create favicons in multiple sizes from your images.</p>
+                    <div class="tool-container">
+                        <div class="favicon-upload-container">
+                            <input type="file" id="faviconUpload" accept="image/*">
+                            <label for="faviconUpload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose an image</span>
+                            </label>
+                            <div class="favicon-preview" id="faviconPreview"></div>
+                        </div>
+                        <div class="favicon-sizes">
+                            <div class="size-option">
+                                <input type="checkbox" id="size16" checked>
+                                <label for="size16">16×16</label>
+                            </div>
+                            <div class="size-option">
+                                <input type="checkbox" id="size32" checked>
+                                <label for="size32">32×32</label>
+                            </div>
+                            <div class="size-option">
+                                <input type="checkbox" id="size48" checked>
+                                <label for="size48">48×48</label>
+                            </div>
+                            <div class="size-option">
+                                <input type="checkbox" id="size64" checked>
+                                <label for="size64">64×64</label>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="generateFaviconBtn" disabled>Generate</button>
+                            <button id="downloadFaviconBtn" disabled>Download</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Box Shadow Generator -->
+                <div class="tool-card-large" id="box-shadow-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-square"></i>
+                    </div>
+                    <h3>Box Shadow Generator</h3>
+                    <p>Create perfect CSS box shadows with this visual editor.</p>
+                    <div class="tool-container">
+                        <div class="shadow-controls">
+                            <div class="shadow-slider">
+                                <label>Horizontal:</label>
+                                <input type="range" id="shadowH" min="-50" max="50" value="0">
+                                <span id="shadowHValue">0px</span>
+                            </div>
+                            <div class="shadow-slider">
+                                <label>Vertical:</label>
+                                <input type="range" id="shadowV" min="-50" max="50" value="5">
+                                <span id="shadowVValue">5px</span>
+                            </div>
+                            <div class="shadow-slider">
+                                <label>Blur:</label>
+                                <input type="range" id="shadowBlur" min="0" max="50" value="15">
+                                <span id="shadowBlurValue">15px</span>
+                            </div>
+                            <div class="shadow-slider">
+                                <label>Spread:</label>
+                                <input type="range" id="shadowSpread" min="-50" max="50" value="0">
+                                <span id="shadowSpreadValue">0px</span>
+                            </div>
+                            <div class="shadow-color">
+                                <label>Color:</label>
+                                <input type="color" id="shadowColor" value="#000000">
+                                <input type="range" id="shadowOpacity" min="0" max="100" value="20">
+                                <span id="shadowOpacityValue">20%</span>
+                            </div>
+                        </div>
+                        <div class="shadow-preview-container">
+                            <div class="shadow-preview" id="shadowPreview"></div>
+                        </div>
+                        <textarea id="shadowCss" readonly>box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);</textarea>
+                        <div class="tool-actions">
+                            <button id="copyShadowBtn">Copy CSS</button>
+                            <button id="resetShadowBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CSS Animation Creator -->
+                <div class="tool-card-large" id="animation-creator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>CSS Animation Creator</h3>
+                    <p>Visual tool for creating custom CSS animations.</p>
+                    <div class="tool-container">
+                        <div class="animation-controls">
+                            <div class="animation-property">
+                                <label>Property:</label>
+                                <select id="animationProperty">
+                                    <option value="transform">Transform</option>
+                                    <option value="opacity">Opacity</option>
+                                    <option value="background-color">Background Color</option>
+                                    <option value="width">Width</option>
+                                </select>
+                            </div>
+                            <div class="animation-values">
+                                <label>From:</label>
+                                <input type="text" id="animationFrom" placeholder="Initial value">
+                                <label>To:</label>
+                                <input type="text" id="animationTo" placeholder="End value">
+                            </div>
+                            <div class="animation-timing">
+                                <label>Duration:</label>
+                                <input type="range" id="animationDuration" min="0.1" max="5" step="0.1" value="1">
+                                <span id="animationDurationValue">1s</span>
+                                <label>Timing:</label>
+                                <select id="animationTiming">
+                                    <option value="ease">Ease</option>
+                                    <option value="linear">Linear</option>
+                                    <option value="ease-in">Ease-in</option>
+                                    <option value="ease-out">Ease-out</option>
+                                    <option value="ease-in-out">Ease-in-out</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="animation-preview-container">
+                            <div class="animation-preview" id="animationPreview"></div>
+                            <button id="playAnimationBtn">Play Animation</button>
+                        </div>
+                        <textarea id="animationCss" readonly></textarea>
+                        <div class="tool-actions">
+                            <button id="copyAnimationBtn">Copy CSS</button>
+                            <button id="resetAnimationBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ToolHub</h3>
+                    <p>Your one-stop destination for all online tools to boost productivity and simplify tasks.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="developer.html">Developer Tools</a></li>
+                        <li><a href="design.html">Design Tools</a></li>
+                        <li><a href="business.html">Business Tools</a></li>
+                        <li><a href="education.html">Education Tools</a></li>
+                        <li><a href="health.html">Health Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest tools and updates delivered to your inbox.</p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> ToolHub. All rights reserved.</p>
+            </div>
+        </
