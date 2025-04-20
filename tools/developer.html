@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tools | ToolHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <span>ToolHub</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="developer.html" class="active">Developer Tools</a></li>
+                    <li><a href="design.html">Design Tools</a></li>
+                    <li><a href="business.html">Business Tools</a></li>
+                    <li><a href="education.html">Education Tools</a></li>
+                    <li><a href="health.html">Health Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="toolset-header">
+        <div class="container">
+            <h1>Developer Tools</h1>
+            <p>Powerful tools for developers to streamline coding, debugging, and testing processes. All tools are free to use with no registration required.</p>
+        </div>
+    </section>
+    
+    <section class="toolset-content">
+        <div class="container">
+            <div class="toolset-grid">
+                <!-- HTML Formatter -->
+                <div class="tool-card-large" id="html-formatter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>HTML Formatter</h3>
+                    <p>Beautify and format your HTML code for better readability with customizable indentation and line wrapping options.</p>
+                    <div class="tool-container">
+                        <textarea id="htmlInput" placeholder="Paste your HTML code here..."></textarea>
+                        <div class="tool-actions">
+                            <button id="formatHtmlBtn">Format Code</button>
+                            <button id="clearHtmlBtn">Clear</button>
+                        </div>
+                        <textarea id="htmlOutput" placeholder="Formatted HTML will appear here..." readonly></textarea>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Validator -->
+                <div class="tool-card-large" id="js-validator">
+                    <div class="tool-icon-large">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript Validator</h3>
+                    <p>Validate your JavaScript code for syntax errors and get suggestions for improvements and best practices.</p>
+                    <div class="tool-container">
+                        <textarea id="jsInput" placeholder="Paste your JavaScript code here..."></textarea>
+                        <div class="tool-actions">
+                            <button id="validateJsBtn">Validate Code</button>
+                            <button id="clearJsBtn">Clear</button>
+                        </div>
+                        <div id="jsValidationResult" class="validation-result"></div>
+                    </div>
+                </div>
+                
+                <!-- SQL Formatter -->
+                <div class="tool-card-large" id="sql-formatter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>SQL Formatter</h3>
+                    <p>Format your SQL queries with proper indentation and syntax highlighting for better readability.</p>
+                    <div class="tool-container">
+                        <textarea id="sqlInput" placeholder="Paste your SQL query here..."></textarea>
+                        <div class="tool-actions">
+                            <button id="formatSqlBtn">Format SQL</button>
+                            <button id="clearSqlBtn">Clear</button>
+                        </div>
+                        <pre id="sqlOutput"></pre>
+                    </div>
+                </div>
+                
+                <!-- CSS Minifier -->
+                <div class="tool-card-large" id="css-minifier">
+                    <div class="tool-icon-large">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS Minifier</h3>
+                    <p>Minify your CSS files to reduce file size and improve website loading speed without losing functionality.</p>
+                    <div class="tool-container">
+                        <textarea id="cssInput" placeholder="Paste your CSS code here..."></textarea>
+                        <div class="tool-actions">
+                            <button id="minifyCssBtn">Minify CSS</button>
+                            <button id="clearCssBtn">Clear</button>
+                        </div>
+                        <textarea id="cssOutput" placeholder="Minified CSS will appear here..." readonly></textarea>
+                    </div>
+                </div>
+                
+                <!-- JSON to XML Converter -->
+                <div class="tool-card-large" id="json-xml-converter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>JSON to XML Converter</h3>
+                    <p>Convert JSON data to XML format and vice versa with this easy-to-use conversion tool.</p>
+                    <div class="tool-container">
+                        <div class="converter-tabs">
+                            <button class="tab-btn active" data-tab="json">JSON to XML</button>
+                            <button class="tab-btn" data-tab="xml">XML to JSON</button>
+                        </div>
+                        <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+                        <div class="tool-actions">
+                            <button id="convertJsonBtn">Convert</button>
+                            <button id="clearJsonBtn">Clear</button>
+                        </div>
+                        <textarea id="jsonOutput" placeholder="Converted XML will appear here..." readonly></textarea>
+                    </div>
+                </div>
+                
+                <!-- Password Generator -->
+                <div class="tool-card-large" id="password-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Password Generator</h3>
+                    <p>Generate strong, secure passwords with customizable length and character sets for your applications.</p>
+                    <div class="tool-container">
+                        <div class="password-options">
+                            <div class="option">
+                                <label for="passwordLength">Length:</label>
+                                <input type="number" id="passwordLength" min="8" max="64" value="12">
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="includeUppercase" checked>
+                                <label for="includeUppercase">Uppercase Letters</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="includeLowercase" checked>
+                                <label for="includeLowercase">Lowercase Letters</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="includeNumbers" checked>
+                                <label for="includeNumbers">Numbers</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="includeSymbols" checked>
+                                <label for="includeSymbols">Symbols</label>
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="generatePasswordBtn">Generate Password</button>
+                            <button id="copyPasswordBtn">Copy</button>
+                        </div>
+                        <input type="text" id="passwordOutput" placeholder="Generated password will appear here..." readonly>
+                    </div>
+                </div>
+                
+                <!-- QR Code Generator -->
+                <div class="tool-card-large" id="qr-generator">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>QR Code Generator</h3>
+                    <p>Create QR codes for URLs, text, contact information and more with customizable colors and sizes.</p>
+                    <div class="tool-container">
+                        <textarea id="qrText" placeholder="Enter text or URL to encode..."></textarea>
+                        <div class="qr-options">
+                            <div class="option">
+                                <label for="qrSize">Size:</label>
+                                <input type="range" id="qrSize" min="100" max="500" value="200">
+                                <span id="qrSizeValue">200px</span>
+                            </div>
+                            <div class="option">
+                                <label for="qrColor">Color:</label>
+                                <input type="color" id="qrColor" value="#000000">
+                            </div>
+                            <div class="option">
+                                <label for="qrBgColor">Background:</label>
+                                <input type="color" id="qrBgColor" value="#ffffff">
+                            </div>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="generateQrBtn">Generate QR Code</button>
+                            <button id="downloadQrBtn">Download</button>
+                        </div>
+                        <div id="qrCodeContainer"></div>
+                    </div>
+                </div>
+                
+                <!-- Base64 Encoder/Decoder -->
+                <div class="tool-card-large" id="base64-converter">
+                    <div class="tool-icon-large">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Base64 Encoder/Decoder</h3>
+                    <p>Encode and decode Base64 strings with this simple tool that supports both text and file operations.</p>
+                    <div class="tool-container">
+                        <div class="converter-tabs">
+                            <button class="tab-btn active" data-tab="encode">Encode</button>
+                            <button class="tab-btn" data-tab="decode">Decode</button>
+                        </div>
+                        <textarea id="base64Input" placeholder="Enter text to encode or Base64 to decode..."></textarea>
+                        <div class="tool-actions">
+                            <button id="convertBase64Btn">Convert</button>
+                            <button id="clearBase64Btn">Clear</button>
+                            <input type="file" id="base64File" style="display: none;">
+                            <button id="uploadBase64Btn">Upload File</button>
+                        </div>
+                        <textarea id="base64Output" placeholder="Result will appear here..." readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>ToolHub</h3>
+                    <p>Your one-stop destination for all online tools to boost productivity and simplify tasks.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="developer.html">Developer Tools</a></li>
+                        <li><a href="design.html">Design Tools</a></li>
+                        <li><a href="business.html">Business Tools</a></li>
+                        <li><a href="education.html">Education Tools</a></li>
+                        <li><a href="health.html">Health Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest tools and updates delivered to your inbox.</p>
+                    <form id="subscribeForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> ToolHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/developer-tools.js"></script>
+</body>
+</html>
